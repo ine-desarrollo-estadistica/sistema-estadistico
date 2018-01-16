@@ -25,8 +25,6 @@ class Login extends CI_Controller {
 					
 		$rolesDbRes = $this->usuario_model->autenticarUsuario($params);
 		
-		redirect($rolesDbRes);
-
 		if ($rolesDbRes != false) { 
 			$rolesDataSet = $rolesDbRes->result()[0];
 			//set sessions

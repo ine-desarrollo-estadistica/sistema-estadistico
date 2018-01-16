@@ -1,0 +1,159 @@
+<html>
+  <head> 
+  <title> :: Prueba :: </title> 
+      <meta name= "viewport" content="width=device-width, user-scalable=no, initial-scalable=no, initial-scala=1.0, maximum-scale=1.0, minimun-scale=1.0"> 
+      <link rel="stylesheet" type="text/css" href="<?php echo "http://localhost/CensoRRHH/";  ?>theme/css/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="<?php echo "http://localhost/CensoRRHH/";  ?>theme/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" href="<?php echo "http://localhost/CensoRRHH/";  ?>theme/css/login.css" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  </head> 
+
+  <body> 
+    <div class="container text-center">
+      <h4  class="text-info">INSTITUTO NACIONAL DE ESTADISTICA <small>-INE-</small></h4> 
+      <h4  class="text-info">OFICINA NACIONAL DEL SERVICIO CIVIL <small>-ONSEC-</small></h4> 
+      <h4  class="text-info">CENSO NACIONAL DEL RECURSO HUMANO </h4> 
+      <h4  class="text-muted">FORMULARIO DE VISITAS PENDIENTES <small>FC02</small></h4> 
+    </div>
+    <div class="container">
+      <form action="" class="form-horizontal">
+        <div class="form-group form-control"> <!--  -->
+          <label for="nombre_id" class="control-label">Nombre del servicio no localizado y/o reciente ingreso</label>
+          <input type="text" class="form-control" id="nombre_id" name="Nombre" placeholder="Nombre del servicio no localizado y/o reciente ingreso">
+              
+          <label for="dpi_id" class="control-label">Numero de DPI</label>
+          <input type="text" class="form-control" id="dpi_id" name="DPI" placeholder="DPI">
+        </div>
+        <div class="form-control form-group"> 
+            <h5 class="text-center text-muted"><small>DATOS DE  LA PERSONA NO ENTREVISTADA</small></h5>  
+            <label for="direccion_id" class="control-label">Dirección particular de la persona</label>
+            <input type="text" class="form-control" id="direccion_id" name="Dirección" placeholder="Direccion ">
+          <div>
+              <div class="form-group">
+                <label for="telefono_id" class="control-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono_id" name="Telefono" placeholder="Teléfono">
+              </div>
+              <div class="form-group">  
+                <label for="direcciont_id" class="control-label">Dirección del centro de trabajo</label>
+                <input type="text" class="form-control" id="direcciont_id" name="direccionT" placeholder="Dirección del centro de trabajo">
+              </div>
+              <div class="form-group">
+                <label for="fecha_id" class="control-label">Fecha de Visita</label>
+                <input type='date' class="form-control" id="fecha_id" name="fecha">
+              </div>
+              <div class="form-group">        
+                <label for="causa_id" class="control-label">Causa de no realizada la entrevista</label>
+                <select class="form-control text-capitalize" id="codigo_id" >
+                    <option value="1">Suspendido por IGSS</option>
+                    <option value="2">Enfermedad, accidente</option>
+                    <option value="3">Prenatal y post-natal</option>
+                    <option value="4">Permiso laboral</option>
+                    <option value="5">Huelga</option>
+                    <option value="6">Renuncia reciente</option>
+                    <option value="7">Abandono de trabajo</option>
+                    <option value="8">Jubilado</option>
+                    <option value="9">Fallecidos</option>
+                    <option value="10">Nunca llega</option>
+                    <option value="11">Jefe o director no sabe de él</option>
+                    <option value="12">Rechaza información</option>
+                    <option value="13">Pendiente de visitar</option>
+                    <option value="14">Otra causa o reciente ingreso</option>
+                </select>    
+              </div>                    
+          </div>
+         </div><p> 
+          <div class="form-control form-group">
+              <label for="causa_id" class="control-label">Tiempo de Retorno</label>
+                <select class="form-control text-capitalize" id="codigo_id" >
+                  <option value="1">Menos de 3 días</option>
+                  <option value="2">Menos de 1 semana</option>
+                  <option value="3">Una semana</option>
+                  <option value="4">Dos semanas</option>
+                  <option value="5">Menos de 1 mes</option>
+                  <option value="6">No sabe</option>
+                </select>                    
+          </div>    
+          <div class="form-control form-group"> 
+                  <h5 class="text-center text-muted"><small>IDENTIFICACION CARTOGRAFICA</small></h5>  
+                  <label for="direccion_id" class="control-label">Dirección particular de la persona</label>
+                  <input type="text" class="form-control" id="direccion_id" name="Dirección" placeholder="Direccion ">
+            <div class="form-group">        
+              <label for="region_id" class="control-label">Región</label>
+                <select class="form-control text-capitalize" id="region_id" >
+                    <option value="1">Región I o Metropolitana</option>
+                    <option value="2">Región II o Norte</option>
+                    <option value="3">Región III o Nororiental</option>
+                    <option value="4">Región IV o Suroriental</option>
+                    <option value="5">Región V o Central</option>
+                    <option value="6">Región VI o Suroccidental</option>
+                    <option value="7">Región VII o Noroccidental</option>
+                    <option value="8">Región VIII o Petén</option>
+                </select>    
+            </div>
+            <div class="form-group">        <!--Departamentos -->
+              <label for="departamento_id" class="control-label">Departamento</label>
+                <select class="form-control text-capitalize" id="departamento_id" >
+                    <option value="1">Alta Verapaz</option>
+                    <option value="2">Baja Verapaz</option>
+                    <option value="3">Chimaltenango</option>
+                    <option value="4">Chiquimula</option>
+                    <option value="5">El progreso</option>
+                    <option value="6">Escuintla</option>
+                    <option value="7">Guatemala</option>
+                    <option value="8">Huehuetenango</option>
+                    <option value="9">Izabal</option>
+                    <option value="10">Jalapa</option>
+                    <option value="11">Jutiapa</option>
+                    <option value="12">Petén</option>
+                    <option value="13">Quetzaltenango</option>
+                    <option value="14">Quiché</option>
+                    <option value="15">Retalhuleu</option>
+                    <option value="16">Sacatepéquez</option>
+                    <option value="17">San Marcos</option>
+                    <option value="18">Santa Rosa</option>
+                    <option value="19">Sololá</option>
+                    <option value="20">Suchitepequez</option>
+                    <option value="21">Totonicapan</option>
+                    <option value="22">Zacapa</option>
+              </select>                     
+            </div>
+            <div class="form-group">  <!--Municipios -->      
+              <label for="departamento_id" class="control-label">Municipio</label>
+                <select class="form-control text-capitalize" id="departamento_id" >
+                    <!--Case 1:         -->
+                </select>                     
+            </div>
+            <div class="form-group">        
+              <label for="area_id" class="control-label">Area</label>
+                <select class="form-control text-capitalize" id="area_id" >
+                    <option value="1">Rural</option>
+                    <option value="2">Urbana</option>
+                </select>    
+            </div> 
+          </div><p>
+          <div class="form-control form-group"> 
+            <h5 class="text-center text-muted"><small>PERSONAL DE CAMPO</small></h5>  
+              <label class="control-label text-info">Empadronador(a)   </label>
+              <label for="codEmpadronador_id" class="control-label text-muted">Código </label>
+              <label for="Empadronador_id" class="control-label text-muted">Nombre Empadronador  </label><br>
+              <label class="control-label text-info">Supervisor(a)   </label>
+              <label for="codEmpadronador_id" class="control-label text-muted">Código </label>
+              <label for="Empadronador_id" class="control-label text-muted">Nombre Supervisor   </label><br>
+              <label class="control-label text-info">Monitor(a)  </label>
+              <label for="codEmpadronador_id" class="control-label text-muted">Código </label>
+              <label for="Empadronador_id" class="control-label text-muted">Nombre Monitor    </label>
+          </div>
+          <button type="aceptar" class="btn btn-primary">Aceptar</button>
+        </div><p>
+      </form>   
+    </div>
+    <?php
+        /*public function index()
+        {
+          $this->load->view('FC02');
+        }*/
+  ?>
+    <script src="http://localhost/CensoRRHH/theme/js/jquery.js"></script>
+    <script src="http://localhost/CensoRRHH/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
