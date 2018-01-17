@@ -35,20 +35,37 @@ class Defuncion extends CI_Controller {
    {
 
       if (!empty($_POST)){
+
+         //print_r($_POST);
             
             $periodo = $_POST['periodo'];
             $deparamento = $_POST['departamento'];
+            $edad = $_POST['edad'];
+            $edad2 = $_POST['edad2'];
+            //$ignorado = ;
+
+            if (isset($_POST['ignorado'])){
+               $ignorado = 1;
+            }else{
+               $ignorado = 0;
+            }     
 
              $params = array   (
                      'periodo'    => $periodo,
-                     'departamento'    => $deparamento
+                     'departamento'    => $deparamento,
+                     'edad'    => $edad,
+                     'edad2'    => $edad2,
+                     'ignorado' => $ignorado  
                   );
      
       }else{
 
          $params = array   (
                      'periodo'    => array(0),
-                     'departamento'    => array(0)
+                     'departamento'    => array(0),
+                     'edad'    => 0,
+                     'edad2'    => 0,
+                     'ignorado' => 0
                   );
       }
       

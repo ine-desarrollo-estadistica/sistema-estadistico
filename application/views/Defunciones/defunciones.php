@@ -69,6 +69,18 @@
     } );
 </script>
 
+<script>
+function valor() {
+    document.getElementById("valor_s").innerHTML = document.getElementById("edad").value;
+    return 0;
+}
+function valor2() {
+    document.getElementById("valor_s2").innerHTML = document.getElementById("edad2").value;
+    return 0;
+}
+
+</script>
+
 <style>
 .table {
     font-size: 85% !important;
@@ -115,7 +127,7 @@
       <form action="" method="post">
 
         <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-3">
                         <label for="periodo_id">Periodo:</label>
                        <select class="form-control text-capitalize" name="periodo[]" id="periodo_id" multiple="multiple" required>
                             <?php
@@ -127,7 +139,7 @@
                         </select> <br>
             </div>
 
-            <div class="col-sm-5">
+             <div class="col-sm-3">
                         <label for="nivel_id">Departamento:</label>
                         <select class="form-control text-capitalize" id="departamento_id" style="width:100%;" name="departamento[]" multiple="multiple" required>
                             <?php
@@ -137,6 +149,21 @@
                                 } 
                             ?>
                         </select> <br>
+            </div>
+
+            <div class="col-sm-4">
+                        <label for="edad">Rango de Edades:</label><br>
+                        <input type="range" id="edad" name="edad" value="0" min="0"
+                                                 max="100" step="5" style="width: 80%;float:left;" onchange="valor();" title="Rango Inferior">
+                                                 <div id="valor_s" style="width: 20%;font-weight:bold;color:#333;float:left;">0</div><!------------>
+                        <input type="range" id="edad2" name="edad2" value="100" min="0"
+                                                 max="100" step="5" style="width: 80%;float:left;" onchange="valor2();" title="Rango Superior">
+                                                 <div id="valor_s2" style="width: 20%;font-weight:bold;color:#333;float:left;">100</div><!------------>
+                       
+                        <br><label><input type="checkbox" name="ignorado" checked> Ignorado</label>
+                        
+
+
             </div>
             <div class="col-sm-2">
                         <input type="hidden" name="ctrl" value="1">
@@ -181,9 +208,15 @@
                 foreach ($registros as $row ) {
                 ?>
                     <tr>
-                        <td><?php echo $row['departamento'];?></td>
                         <td><?php echo $row['periodo']; ?></td>
-                        <td><?php echo number_format($row['edad']); ?></td>
+                        <td><?php echo $row['departamento'];?></td>
+                        <td><?php
+                                if($row['edad']=="109"){
+                                    echo"Ignorado";
+                                }else{
+                                    echo number_format($row['edad']);
+                                } 
+                        ?></td>
                         <td><?php echo number_format($row['hombres'], 2); ?></td>
                         <td><?php echo number_format($row['mujeres'], 2); ?></td>
                         <td><?php echo number_format($row['total'], 2); ?></td>
@@ -234,8 +267,8 @@
                 foreach ($registros_totales as $row ) {
                 ?>
                     <tr>
-                        <td><?php echo $row['departamento'];?></td>
                         <td><?php echo $row['periodo']; ?></td>
+                        <td><?php echo $row['departamento'];?></td>
                         <td><?php echo number_format($row['hombres_total'], 2); ?></td>
                         <td><?php echo number_format($row['mujeres_total'], 2); ?></td>
                         <td><?php echo number_format($row['total'], 2); ?></td>

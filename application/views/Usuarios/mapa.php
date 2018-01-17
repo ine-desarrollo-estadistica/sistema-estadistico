@@ -91,5 +91,4 @@
     <area alt="JUTIAPA" onclick="Ejecutar(2200)" onmouseover="img_act(22)" onmouseout="img_inact()" shape="polygon" coords="159,249,153,255,148,252,143,257,142,255,136,257,134,259,133,261,129,263,126,264,126,267,129,268,134,274,133,279,130,281,130,286,124,284,121,285,122,287,124,293,123,294,124,295,123,296,130,300,132,296,132,292,138,286,147,279,152,282,158,273,164,270,166,268,163,263,163,261,163,260,168,257,168,254,166,252,161,253,159,249">
     <img src="/EducacionINE/theme/img/sche$sinip/mapas/snmppt$DP0.jpg" name="mapa_completo" border="0" usemap="#FPMap0" alt="" width="261" height="340">
     </map>
-  
 </p>

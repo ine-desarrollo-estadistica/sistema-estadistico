@@ -40,9 +40,16 @@ class Defunciones_model extends CI_Model{
 		$departamento = $this->ConvertirTexto($parametros['departamento']);
 		$periodo = $this->ConvertirTexto($parametros['periodo']);
 
+		if($parametros['ignorado']){
+			$ignorado_opc = " or (D.edad = 109) ";
+		}else{
+			$ignorado_opc = "";
+		}
+
 		$sql = "SELECT D.periodo, P.departamento, D.edad, D.hombres, D.mujeres, (D.hombres + D.mujeres) as total FROM defunciones as D, departamento as P
-				WHERE D.departamento_cod = P.codigo and
-				D.departamento_cod in ".$departamento." and D.periodo in ".$periodo. ";";
+				WHERE D.departamento_cod = P.codigo and ((D.edad >= ".$parametros['edad']." and D.edad <= ".$parametros['edad2'].")".$ignorado_opc.") and D.departamento_cod in ".$departamento." and D.periodo in ".$periodo.";";
+
+		//print_r($sql);
 
 		$res = $this->db->query($sql);
 		return $res->result();
